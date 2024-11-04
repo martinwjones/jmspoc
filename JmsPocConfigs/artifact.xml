@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="OrderPaymentMQ" groupId="com.example.message-store" version="1.0.0" type="synapse/message-store" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/message-stores/OrderPaymentMQ.xml</file>
+    </artifact>
+    <artifact name="OrderPaymentErrorMQ" groupId="com.example.message-store" version="1.0.0" type="synapse/message-store" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/message-stores/OrderPaymentErrorMQ.xml</file>
+    </artifact>
+    <artifact name="OrderPaymentServiceAPI" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/OrderPaymentServiceAPI.xml</file>
+    </artifact>
+    <artifact name="OrderPaymentServiceAPI_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/OrderPaymentServiceAPI_swagger.yaml</file>
+    </artifact>
+    <artifact name="OrderPaymentServiceAPI_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/OrderPaymentServiceAPI_metadata.yaml</file>
+    </artifact>
+</artifacts>
