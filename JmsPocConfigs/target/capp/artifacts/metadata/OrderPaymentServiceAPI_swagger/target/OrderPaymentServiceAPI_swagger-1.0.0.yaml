@@ -4,7 +4,7 @@ info:
   description: API Definition of OrderPaymentServiceAPI
   version: 1.0.0
 servers:
-- url: /orderpayment
+- url: http://localhost:8290/orderpayment
 paths:
   /pay:
     post:

@@ -14,4 +14,7 @@
     <artifact name="OrderPaymentServiceAPI_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
         <file>src/main/resources/metadata/OrderPaymentServiceAPI_metadata.yaml</file>
     </artifact>
+    <artifact name="OrderPaymentSeq" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/OrderPaymentSeq.xml</file>
+    </artifact>
 </artifacts>

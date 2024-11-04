@@ -5,7 +5,10 @@
             <log description="Log request payload" level="full"/>
             <property description="Initiate asynchronous mediation flow" name="OUT_ONLY" scope="default" type="STRING" value="true"/>
             <property description="Generate 202 response from mediation flow" name="FORCE_SC_ACCEPTED" scope="axis2" type="STRING" value="true"/>
-            <store description="Send to OrderPayment Message Queue" messageStore="OrderPaymentMQ"/>
+            <!-- <send description="Publish request payload to JMS endpoint">
+                <endpoint key="OrderPaymentQueueEP"/>
+            </send>  -->
+            <store messageStore="OrderPaymentMQ"/>
         </inSequence>
         <outSequence/>
         <faultSequence/>
@@ -16,6 +19,9 @@
             <property description="Initiate asynchronous mediation flow" name="OUT_ONLY" scope="default" type="STRING" value="true"/>
             <property description="Generate 202 response from mediation flow" name="FORCE_SC_ACCEPTED" scope="axis2" type="STRING" value="true"/>
             <store messageStore="OrderPaymentErrorMQ"/>
+            <!-- <send description="Publish request payload to JMS endpoint">
+                <endpoint key="OrderPaymentQueueEP"/>
+            </send>-->
         </inSequence>
         <outSequence/>
         <faultSequence/>
