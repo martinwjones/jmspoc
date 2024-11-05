@@ -2,6 +2,10 @@
 <api context="/orderpayment" name="OrderPaymentServiceAPI" xmlns="http://ws.apache.org/ns/synapse">
     <resource methods="POST" uri-template="/pay">
         <inSequence>
+            <log level="custom">
+                <property expression="number($SYSTEM:interval)" name="ORDERPAYMENT_interval"/>
+                <property expression="boolean($SYSTEM:is_active = 'true')" name="ORDERPAYMENT_is_active"/>
+            </log>
             <log description="Log request payload" level="full"/>
             <property description="Initiate asynchronous mediation flow" name="OUT_ONLY" scope="default" type="STRING" value="true"/>
             <property description="Generate 202 response from mediation flow" name="FORCE_SC_ACCEPTED" scope="axis2" type="STRING" value="true"/>
@@ -16,6 +20,21 @@
             <property description="Initiate asynchronous mediation flow" name="OUT_ONLY" scope="default" type="STRING" value="true"/>
             <property description="Generate 202 response from mediation flow" name="FORCE_SC_ACCEPTED" scope="axis2" type="STRING" value="true"/>
             <store messageStore="OrderPaymentErrorMQ"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/test">
+        <inSequence>
+            <log level="custom">
+                <property expression="get-property('env', 'interval')" name="ORDERPAYMENT_interval_raw"/>
+                <property expression="get-property('env', 'is_active')" name="ORDERPAYMENT_is_active_raw"/>
+                <property expression="number(get-property('env', 'interval'))" name="ORDERPAYMENT_interval"/>
+                <property expression="boolean(get-property('env', 'is_active') = 'true')" name="ORDERPAYMENT_is_active"/>
+            </log>
+            <log description="Log request payload" level="full"/>
+            <property description="Initiate asynchronous mediation flow" name="OUT_ONLY" scope="default" type="STRING" value="true"/>
+            <property description="Generate 202 response from mediation flow" name="FORCE_SC_ACCEPTED" scope="axis2" type="STRING" value="true"/>
         </inSequence>
         <outSequence/>
         <faultSequence/>
