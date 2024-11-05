@@ -7,7 +7,6 @@
     <parameter name="store.connection.retry.interval">1000</parameter>
     <parameter name="max.store.connection.attempts">-1</parameter>
     <parameter name="max.delivery.drop">Disabled</parameter>
-    <parameter name="interval">1000</parameter>
     <parameter name="message.processor.failMessagesStore">OrderPaymentErrorMQ</parameter>
     <parameter name="is.active">false</parameter>
 </messageProcessor>
