@@ -11,10 +11,21 @@
   <modules>
     <module>artifacts\message-store\OrderPaymentMQ</module>
     <module>artifacts\message-store\OrderPaymentErrorMQ</module>
+    <module>artifacts\message-store\OrderPaymentRetryMQ</module>
     <module>artifacts\api\OrderPaymentServiceAPI</module>
     <module>artifacts\metadata\OrderPaymentServiceAPI_swagger</module>
     <module>artifacts\metadata\OrderPaymentServiceAPI_metadata</module>
+    <module>artifacts\metadata\OrderPaymentProxy_proxy_metadata</module>
+    <module>artifacts\metadata\OrderPaymentErrorProxy_proxy_metadata</module>
+    <module>artifacts\endpoint\OrderPaymentProxyEP</module>
+    <module>artifacts\endpoint\OrderPaymentRetryProxyEP</module>
     <module>artifacts\sequence\OrderPaymentSeq</module>
+    <module>artifacts\sequence\OrderPaymentErrorSeq</module>
+    <module>artifacts\sequence\OrderPaymentRetrySeq</module>
+    <module>artifacts\proxy-service\OrderPaymentProxy</module>
+    <module>artifacts\proxy-service\OrderPaymentRetryProxy</module>
+    <module>artifacts\message-processors\OrderPaymentMP</module>
+    <module>artifacts\message-processors\OrderPaymentRetryMP</module>
   </modules>
   <distributionManagement>
     <repository>
