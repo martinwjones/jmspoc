@@ -4,7 +4,7 @@
     <parameter name="store.jms.username">$SYSTEM:jmsuser</parameter>
     <parameter name="store.jms.connection.factory">QueueConnectionFactory</parameter>
     <parameter name="store.producer.guaranteed.delivery.enable">false</parameter>
-    <parameter name="store.jms.password">$SYSTEM:jmspass</parameter>
+    <parameter name="store.jms.password">{wso2:vault-lookup('jmspass')}</parameter>
     <parameter name="store.jms.cache.connection">false</parameter>
     <parameter name="java.naming.factory.initial">org.apache.activemq.jndi.ActiveMQInitialContextFactory</parameter>
     <parameter name="java.naming.provider.url">$SYSTEM:jmsurl</parameter>
