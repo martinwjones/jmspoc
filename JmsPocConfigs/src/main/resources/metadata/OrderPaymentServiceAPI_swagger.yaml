@@ -36,7 +36,7 @@ paths:
       responses:
         default:
           description: Default response
-  /test:
+  /retry:
     post:
       requestBody:
         description: Sample Payload

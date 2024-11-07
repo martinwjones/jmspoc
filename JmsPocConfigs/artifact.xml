@@ -32,4 +32,22 @@
     <artifact name="OrderPaymentMP" groupId="com.example.message-processors" version="1.0.0" type="synapse/message-processors" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/message-processors/OrderPaymentMP.xml</file>
     </artifact>
+    <artifact name="OrderPaymentRetryMP" groupId="com.example.message-processors" version="1.0.0" type="synapse/message-processors" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/message-processors/OrderPaymentRetryMP.xml</file>
+    </artifact>
+    <artifact name="OrderPaymentRetryProxyEP" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/OrderPaymentRetryProxyEP.xml</file>
+    </artifact>
+    <artifact name="OrderPaymentRetryProxy" groupId="com.example.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/OrderPaymentRetryProxy.xml</file>
+    </artifact>
+    <artifact name="OrderPaymentErrorProxy_proxy_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/OrderPaymentErrorProxy_proxy_metadata.yaml</file>
+    </artifact>
+    <artifact name="OrderPaymentRetryMQ" groupId="com.example.message-store" version="1.0.0" type="synapse/message-store" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/message-stores/OrderPaymentRetryMQ.xml</file>
+    </artifact>
+    <artifact name="OrderPaymentRetrySeq" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/OrderPaymentRetrySeq.xml</file>
+    </artifact>
 </artifacts>
