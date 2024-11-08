@@ -6,7 +6,7 @@
             <responseAction>fault</responseAction>
         </timeout>
         <suspendOnFailure>
-            <initialDuration>-1</initialDuration>
+            <initialDuration>2000</initialDuration>
             <progressionFactor>1.0</progressionFactor>
         </suspendOnFailure>
         <markForSuspension>

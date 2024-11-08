@@ -12,6 +12,8 @@
         </outSequence>
         <faultSequence>
             <log description="ERROR logged from main payment proxy" level="full"/>
+            <property name="HTTP_SC" scope="axis2" type="STRING" value="200"/>
+            <respond/>
         </faultSequence>
     </target>
 </proxy>

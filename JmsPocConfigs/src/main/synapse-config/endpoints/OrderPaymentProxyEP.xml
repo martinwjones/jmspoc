@@ -3,9 +3,10 @@
     <address format="soap11" statistics="enable" trace="enable" uri="local://services/OrderPaymentProxy">
         <timeout>
             <duration>1000</duration>
+            <responseAction>fault</responseAction>
         </timeout>
         <suspendOnFailure>
-            <initialDuration>-1</initialDuration>
+            <initialDuration>2000</initialDuration>
             <progressionFactor>1.0</progressionFactor>
         </suspendOnFailure>
         <markForSuspension>
