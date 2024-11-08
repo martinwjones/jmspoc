@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sequence name="OrderPaymentSeq" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
-    <log description="OrderPaymentSeq: Log order payment payload" level="full"/>
+    <enrich>
+        <source clone="true" type="envelope"/>
+        <target property="SOAP_RECEIPT_COPY" type="property"/>
+    </enrich>
+    <log>
+        <property expression="$ctx:SOAP_RECEIPT_COPY" name="FINAL destination payment body"/>
+    </log>
 </sequence>

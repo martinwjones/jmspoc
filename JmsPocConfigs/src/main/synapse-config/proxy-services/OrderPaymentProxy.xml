@@ -3,6 +3,8 @@
     <target>
         <inSequence>
             <sequence key="OrderPaymentSeq"/>
+            <property name="HTTP_SC" scope="axis2" type="STRING" value="200"/>
+            <respond/>
         </inSequence>
         <outSequence>
             <property name="HTTP_SC" scope="axis2" type="STRING" value="200"/>
