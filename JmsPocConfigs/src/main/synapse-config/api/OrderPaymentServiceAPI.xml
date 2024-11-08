@@ -5,14 +5,14 @@
             <log level="custom">
                 <property expression="json-eval($)" name="incoming payment request"/>
             </log>
-            <property name="messageType" scope="axis2" type="STRING" value="text/xml"/>
-            <enrich>
+            <!-- <property name="messageType" scope="axis2" type="STRING" value="text/xml"/> -->
+            <!-- <enrich>
                 <source clone="true" type="envelope"/>
                 <target property="SOAP_RECEIPT_COPY" type="property"/>
             </enrich>
             <log level="custom">
                 <property expression="$ctx:SOAP_RECEIPT_COPY" name="incoming payment converted to SOAP"/>
-            </log>
+            </log> -->
             <property action="remove" name="REST_URL_POSTFIX" scope="axis2"/>
             <store description="OrderPayment Message Queue" messageStore="OrderPaymentMQ"/>
             <property description="Initiate asynchronous mediation flow" name="OUT_ONLY" scope="default" type="STRING" value="true"/>
@@ -26,15 +26,14 @@
             <log level="custom">
                 <property expression="json-eval($)" name="incoming payment request"/>
             </log>
-            <log description="Log request payload" level="full"/>
-            <property name="messageType" scope="axis2" type="STRING" value="text/xml"/>
-            <enrich>
+            <!-- <property name="messageType" scope="axis2" type="STRING" value="text/xml"/> -->
+            <!-- <enrich>
                 <source clone="true" type="envelope"/>
                 <target property="SOAP_RECEIPT_COPY" type="property"/>
             </enrich>
             <log level="custom">
                 <property expression="$ctx:SOAP_RECEIPT_COPY" name="incoming payment converted to SOAP"/>
-            </log>
+            </log> -->
             <property action="remove" name="REST_URL_POSTFIX" scope="axis2"/>
             <store description="OrderPaymentErrorMQ Message Queue" messageStore="OrderPaymentErrorMQ"/>
             <property description="Initiate asynchronous mediation flow" name="OUT_ONLY" scope="default" type="STRING" value="true"/>
@@ -48,15 +47,14 @@
             <log level="custom">
                 <property expression="json-eval($)" name="incoming payment request"/>
             </log>
-            <log description="Log request payload" level="full"/>
-            <property name="messageType" scope="axis2" type="STRING" value="text/xml"/>
-            <enrich>
+            <!-- <property name="messageType" scope="axis2" type="STRING" value="text/xml"/> -->
+            <!-- <enrich>
                 <source clone="true" type="envelope"/>
                 <target property="SOAP_RECEIPT_COPY" type="property"/>
             </enrich>
             <log level="custom">
                 <property expression="$ctx:SOAP_RECEIPT_COPY" name="incoming payment converted to SOAP"/>
-            </log>
+            </log> -->
             <property action="remove" name="REST_URL_POSTFIX" scope="axis2"/>
             <store description="OrderPaymentRetryMQ Message Queue" messageStore="OrderPaymentRetryMQ"/>
             <property description="Initiate asynchronous mediation flow" name="OUT_ONLY" scope="default" type="STRING" value="true"/>

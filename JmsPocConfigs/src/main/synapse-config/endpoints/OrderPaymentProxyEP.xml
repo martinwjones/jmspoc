@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <endpoint name="OrderPaymentProxyEP" xmlns="http://ws.apache.org/ns/synapse">
     <address format="soap11" statistics="enable" trace="enable" uri="local://services/OrderPaymentProxy">
+        <timeout>
+            <duration>1000</duration>
+        </timeout>
         <suspendOnFailure>
             <initialDuration>-1</initialDuration>
             <progressionFactor>1.0</progressionFactor>
