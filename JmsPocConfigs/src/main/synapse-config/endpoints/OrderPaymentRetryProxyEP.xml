@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <endpoint name="OrderPaymentRetryProxyEP" xmlns="http://ws.apache.org/ns/synapse">
-    <address uri="local://services/OrderPaymentRetryProxy">
+    <address format="soap11" statistics="enable" trace="enable" uri="local://services/OrderPaymentRetryProxy">
         <suspendOnFailure>
             <initialDuration>-1</initialDuration>
             <progressionFactor>1.0</progressionFactor>

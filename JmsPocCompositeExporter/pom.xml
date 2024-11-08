@@ -15,12 +15,17 @@
   <description>JmsPocCompositeExporter</description>
   <properties>
     <com.example.metadata_._OrderPaymentProxy_proxy_metadata>capp/EnterpriseServiceBus</com.example.metadata_._OrderPaymentProxy_proxy_metadata>
+    <com.example.endpoint_._OrderPaymentRetryProxyEP>capp/EnterpriseServiceBus</com.example.endpoint_._OrderPaymentRetryProxyEP>
     <com.example.proxy-service_._OrderPaymentProxy>capp/EnterpriseServiceBus</com.example.proxy-service_._OrderPaymentProxy>
     <com.example.sequence_._OrderPaymentErrorSeq>capp/EnterpriseServiceBus</com.example.sequence_._OrderPaymentErrorSeq>
+    <com.example.sequence_._OrderPaymentRetrySeq>capp/EnterpriseServiceBus</com.example.sequence_._OrderPaymentRetrySeq>
+    <com.example.proxy-service_._OrderPaymentRetryProxy>capp/EnterpriseServiceBus</com.example.proxy-service_._OrderPaymentRetryProxy>
     <com.example.api_._OrderPaymentServiceAPI>capp/EnterpriseServiceBus</com.example.api_._OrderPaymentServiceAPI>
+    <com.example.message-processors_._OrderPaymentRetryMP>capp/EnterpriseServiceBus</com.example.message-processors_._OrderPaymentRetryMP>
     <com.example.metadata_._OrderPaymentServiceAPI_swagger>capp/EnterpriseServiceBus</com.example.metadata_._OrderPaymentServiceAPI_swagger>
     <com.example.message-store_._OrderPaymentMQ>capp/EnterpriseServiceBus</com.example.message-store_._OrderPaymentMQ>
     <com.example.endpoint_._OrderPaymentProxyEP>capp/EnterpriseServiceBus</com.example.endpoint_._OrderPaymentProxyEP>
+    <com.example.message-store_._OrderPaymentRetryMQ>capp/EnterpriseServiceBus</com.example.message-store_._OrderPaymentRetryMQ>
     <com.example.metadata_._OrderPaymentServiceAPI_metadata>capp/EnterpriseServiceBus</com.example.metadata_._OrderPaymentServiceAPI_metadata>
     <com.example.message-store_._OrderPaymentErrorMQ>capp/EnterpriseServiceBus</com.example.message-store_._OrderPaymentErrorMQ>
     <com.example.message-processors_._OrderPaymentMP>capp/EnterpriseServiceBus</com.example.message-processors_._OrderPaymentMP>
@@ -30,13 +35,55 @@
   <dependencies>
     <dependency>
       <groupId>com.example.metadata</groupId>
-      <artifactId>OrderPaymentServiceAPI_swagger</artifactId>
+      <artifactId>OrderPaymentProxy_proxy_metadata</artifactId>
       <version>1.0.0</version>
       <type>yaml</type>
     </dependency>
     <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>OrderPaymentRetryProxyEP</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.proxy-service</groupId>
+      <artifactId>OrderPaymentProxy</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.sequence</groupId>
+      <artifactId>OrderPaymentErrorSeq</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.sequence</groupId>
+      <artifactId>OrderPaymentRetrySeq</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.proxy-service</groupId>
+      <artifactId>OrderPaymentRetryProxy</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.api</groupId>
+      <artifactId>OrderPaymentServiceAPI</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.message-processors</groupId>
+      <artifactId>OrderPaymentRetryMP</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
       <groupId>com.example.metadata</groupId>
-      <artifactId>OrderPaymentProxy_proxy_metadata</artifactId>
+      <artifactId>OrderPaymentServiceAPI_swagger</artifactId>
       <version>1.0.0</version>
       <type>yaml</type>
     </dependency>
@@ -53,14 +100,8 @@
       <type>xml</type>
     </dependency>
     <dependency>
-      <groupId>com.example.proxy-service</groupId>
-      <artifactId>OrderPaymentProxy</artifactId>
-      <version>1.0.0</version>
-      <type>xml</type>
-    </dependency>
-    <dependency>
-      <groupId>com.example.sequence</groupId>
-      <artifactId>OrderPaymentErrorSeq</artifactId>
+      <groupId>com.example.message-store</groupId>
+      <artifactId>OrderPaymentRetryMQ</artifactId>
       <version>1.0.0</version>
       <type>xml</type>
     </dependency>
@@ -85,12 +126,6 @@
     <dependency>
       <groupId>com.example.sequence</groupId>
       <artifactId>OrderPaymentSeq</artifactId>
-      <version>1.0.0</version>
-      <type>xml</type>
-    </dependency>
-    <dependency>
-      <groupId>com.example.api</groupId>
-      <artifactId>OrderPaymentServiceAPI</artifactId>
       <version>1.0.0</version>
       <type>xml</type>
     </dependency>

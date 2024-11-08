@@ -2,30 +2,63 @@
 <api context="/orderpayment" name="OrderPaymentServiceAPI" xmlns="http://ws.apache.org/ns/synapse">
     <resource methods="POST" uri-template="/pay">
         <inSequence>
+            <log level="custom">
+                <property expression="json-eval($)" name="incoming payment request"/>
+            </log>
             <log description="Log request payload" level="full"/>
+            <property name="messageType" scope="axis2" type="STRING" value="text/xml"/>
+            <enrich>
+                <source clone="true" type="envelope"/>
+                <target property="SOAP_RECEIPT_COPY" type="property"/>
+            </enrich>
+            <log level="custom">
+                <property expression="$ctx:SOAP_RECEIPT_COPY" name="incoming payment converted to SOAP"/>
+            </log>
+            <store description="OrderPayment Message Queue" messageStore="OrderPaymentMQ"/>
             <property description="Initiate asynchronous mediation flow" name="OUT_ONLY" scope="default" type="STRING" value="true"/>
             <property description="Generate 202 response from mediation flow" name="FORCE_SC_ACCEPTED" scope="axis2" type="STRING" value="true"/>
-            <store description="Send to OrderPayment Message Queue" messageStore="OrderPaymentMQ"/>
         </inSequence>
         <outSequence/>
         <faultSequence/>
     </resource>
     <resource methods="POST" uri-template="/fail">
         <inSequence>
+            <log level="custom">
+                <property expression="json-eval($)" name="incoming payment request"/>
+            </log>
             <log description="Log request payload" level="full"/>
+            <property name="messageType" scope="axis2" type="STRING" value="text/xml"/>
+            <enrich>
+                <source clone="true" type="envelope"/>
+                <target property="SOAP_RECEIPT_COPY" type="property"/>
+            </enrich>
+            <log level="custom">
+                <property expression="$ctx:SOAP_RECEIPT_COPY" name="incoming payment converted to SOAP"/>
+            </log>
+            <store description="OrderPaymentErrorMQ Message Queue" messageStore="OrderPaymentErrorMQ"/>
             <property description="Initiate asynchronous mediation flow" name="OUT_ONLY" scope="default" type="STRING" value="true"/>
             <property description="Generate 202 response from mediation flow" name="FORCE_SC_ACCEPTED" scope="axis2" type="STRING" value="true"/>
-            <store messageStore="OrderPaymentErrorMQ"/>
         </inSequence>
         <outSequence/>
         <faultSequence/>
     </resource>
     <resource methods="POST" uri-template="/retry">
         <inSequence>
+            <log level="custom">
+                <property expression="json-eval($)" name="incoming payment request"/>
+            </log>
             <log description="Log request payload" level="full"/>
+            <property name="messageType" scope="axis2" type="STRING" value="text/xml"/>
+            <enrich>
+                <source clone="true" type="envelope"/>
+                <target property="SOAP_RECEIPT_COPY" type="property"/>
+            </enrich>
+            <log level="custom">
+                <property expression="$ctx:SOAP_RECEIPT_COPY" name="incoming payment converted to SOAP"/>
+            </log>
+            <store description="OrderPaymentRetryMQ Message Queue" messageStore="OrderPaymentRetryMQ"/>
             <property description="Initiate asynchronous mediation flow" name="OUT_ONLY" scope="default" type="STRING" value="true"/>
             <property description="Generate 202 response from mediation flow" name="FORCE_SC_ACCEPTED" scope="axis2" type="STRING" value="true"/>
-            <store messageStore="OrderPaymentRetryMQ"/>
         </inSequence>
         <outSequence/>
         <faultSequence/>
