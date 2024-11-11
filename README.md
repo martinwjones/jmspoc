@@ -1,6 +1,6 @@
 # jmspoc
 
-This creates an incmoing API endpoint with three resources, each posts a message to a corresponding message queue:
+This creates an incoming API endpoint with three resources, each posts a message to a corresponding message queue:
 
 * /pay posts to -> OrderPaymentMQ
 * /fail posts to ->  OrderPaymentErrorMQ
