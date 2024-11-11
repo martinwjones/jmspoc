@@ -5,8 +5,6 @@
         <target property="SOAP_RECEIPT_COPY" type="property"/>
     </enrich>
     <log>
-        <property expression="$ctx:SOAP_RECEIPT_COPY" name="MAIN Payment destination payment body"/>
+        <property expression="$ctx:SOAP_RECEIPT_COPY" name="OrderPaymentSeq says: "/>
     </log>
-    <!-- send the message to the error store -->
-    <store description="OrderPaymentErrorMQ Message Queue" messageStore="OrderPaymentErrorMQ"/>
 </sequence>

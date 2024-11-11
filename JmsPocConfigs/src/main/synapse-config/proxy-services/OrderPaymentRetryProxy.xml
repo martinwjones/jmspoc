@@ -3,16 +3,13 @@
     <target>
         <inSequence>
             <sequence key="OrderPaymentRetrySeq"/>
-            <property name="HTTP_SC" scope="axis2" type="STRING" value="200"/>
-            <respond/>
         </inSequence>
         <outSequence>
             <property name="HTTP_SC" scope="axis2" type="STRING" value="200"/>
             <respond/>
         </outSequence>
         <faultSequence>
-            <log description="ERROR logged from main payment ERROR proxy" level="full"/>
-            <respond/>
+            <log description="ERROR logged from main OrderPaymentRetryProxy ERROR proxy" level="full"/>
         </faultSequence>
     </target>
 </proxy>
