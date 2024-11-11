@@ -9,7 +9,8 @@
             <respond/>
         </outSequence>
         <faultSequence>
-            <log description="ERROR logged from main OrderPaymentRetryProxy ERROR proxy" level="full"/>
+            <log description="ERROR IN OrderPaymentRetryProxy" level="full"/>
+            <!-- <sequence key="OrderPaymentErrorSeq" /> -->
         </faultSequence>
     </target>
 </proxy>

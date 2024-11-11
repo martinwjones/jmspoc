@@ -7,5 +7,6 @@
         <property expression="$ctx:ERROR_MESSAGE" name="ERROR_MESSAGE"/>
         <property expression="$ctx:ERROR_DETAIL" name="ERROR_DETAIL"/>
         <property expression="$ctx:ERROR_EXCEPTION" name="ERROR_EXCEPTION"/>
+        <property expression="$body" name="ERROR FROM OrderPaymentErrorSeq"/>
     </log>
 </sequence>

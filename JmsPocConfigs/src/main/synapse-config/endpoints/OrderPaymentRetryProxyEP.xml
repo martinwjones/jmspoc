@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <endpoint name="OrderPaymentRetryProxyEP" xmlns="http://ws.apache.org/ns/synapse">
-    <address statistics="enable" trace="enable" uri="http://localhost:8290/services/OrderPaymentRetryProxy">
+    <address statistics="enable" trace="enable" uri="http://usg-sep-0142:8290/services/OrderPaymentRetryProxy">
         <timeout>
             <duration>1000</duration>
             <responseAction>fault</responseAction>

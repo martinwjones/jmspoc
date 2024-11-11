@@ -3,13 +3,26 @@
     <target>
         <inSequence>
             <sequence key="OrderPaymentSeq"/>
+            <log level="custom">
+                <property name="OrderPaymentSeq completed" value="true"/>
+            </log>
+            <respond/>
         </inSequence>
         <outSequence>
+            <log level="custom">
+                <property name="Entering outSequence" value="true"/>
+            </log>
             <property name="HTTP_SC" scope="axis2" type="STRING" value="200"/>
             <respond/>
         </outSequence>
         <faultSequence>
-            <log description="ERROR logged from main OrderPaymentProxy proxy" level="full"/>
+            <property expression="get-property('ERROR_CODE')" name="ERROR_CODE" scope="default" type="STRING"/>
+            <property expression="get-property('ERROR_MESSAGE')" name="ERROR_MESSAGE" scope="default" type="STRING"/>
+            <log level="custom">
+                <property expression="$ctx:ERROR_CODE" name="Error Code"/>
+                <property expression="$ctx:ERROR_MESSAGE" name="Error Message"/>
+            </log>
+            <respond/>
         </faultSequence>
     </target>
 </proxy>
