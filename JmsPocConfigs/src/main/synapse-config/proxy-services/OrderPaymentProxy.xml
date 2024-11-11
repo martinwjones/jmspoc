@@ -6,13 +6,10 @@
             <log level="custom">
                 <property name="OrderPaymentSeq completed" value="true"/>
             </log>
+            <property name="HTTP_SC" scope="axis2" type="STRING" value="200"/>
             <respond/>
         </inSequence>
         <outSequence>
-            <log level="custom">
-                <property name="Entering outSequence" value="true"/>
-            </log>
-            <property name="HTTP_SC" scope="axis2" type="STRING" value="200"/>
             <respond/>
         </outSequence>
         <faultSequence>

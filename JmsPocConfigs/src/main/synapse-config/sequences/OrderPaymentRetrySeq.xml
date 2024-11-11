@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sequence name="OrderPaymentRetrySeq" onError="OrderPaymentErrorSeq" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log level="custom">
+        <property name="At start of OrderPaymentRetrySeq" value="true"/>
+    </log>
     <enrich>
         <source clone="true" type="envelope"/>
         <target property="SOAP_RECEIPT_COPY" type="property"/>
     </enrich>
     <log>
-        <property expression="$ctx:SOAP_RECEIPT_COPY" name="OrderPaymentRetrySeq says: "/>
+        <property expression="$ctx:SOAP_RECEIPT_COPY" name="OrderPaymentRetrySeq SOAP Receipt"/>
+    </log>
+    <log level="custom">
+        <property name="At end of OrderPaymentRetrySeq" value="true"/>
     </log>
 </sequence>

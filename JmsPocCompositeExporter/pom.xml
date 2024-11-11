@@ -19,6 +19,7 @@
     <com.example.proxy-service_._OrderPaymentProxy>capp/EnterpriseServiceBus</com.example.proxy-service_._OrderPaymentProxy>
     <com.example.sequence_._OrderPaymentErrorSeq>capp/EnterpriseServiceBus</com.example.sequence_._OrderPaymentErrorSeq>
     <com.example.sequence_._OrderPaymentRetrySeq>capp/EnterpriseServiceBus</com.example.sequence_._OrderPaymentRetrySeq>
+    
     <com.example.proxy-service_._OrderPaymentRetryProxy>capp/EnterpriseServiceBus</com.example.proxy-service_._OrderPaymentRetryProxy>
     <com.example.api_._OrderPaymentServiceAPI>capp/EnterpriseServiceBus</com.example.api_._OrderPaymentServiceAPI>
     <com.example.message-processors_._OrderPaymentRetryMP>capp/EnterpriseServiceBus</com.example.message-processors_._OrderPaymentRetryMP>
@@ -63,7 +64,7 @@
       <version>1.0.0</version>
       <type>xml</type>
     </dependency>
-    <dependency>
+        <dependency>
       <groupId>com.example.proxy-service</groupId>
       <artifactId>OrderPaymentRetryProxy</artifactId>
       <version>1.0.0</version>
