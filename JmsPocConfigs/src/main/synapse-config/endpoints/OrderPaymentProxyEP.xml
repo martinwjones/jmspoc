@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <endpoint name="OrderPaymentProxyEP" xmlns="http://ws.apache.org/ns/synapse">
-    <address statistics="enable" trace="enable" uri="local://services/OrderPaymentProxy">
+    <address statistics="enable" trace="enable" uri="http://localhost:8290/services/OrderPaymentProxy">
         <timeout>
             <duration>10000</duration>
         </timeout>
