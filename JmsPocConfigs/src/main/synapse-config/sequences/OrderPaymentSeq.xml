@@ -9,7 +9,9 @@
     </enrich>
     <log>
         <property expression="$ctx:SOAP_RECEIPT_COPY" name="SOAP Receipt"/>
+        <property name="TEST ERROR WORKFLOW" value="True"/>
     </log>
+    <store description="Deliberately sending to the message to the error OrderPaymentErrorMQ" messageStore="OrderPaymentErrorMQ"/>
     <log level="custom">
         <property name="At end of OrderPaymentSeq" value="true"/>
     </log>
