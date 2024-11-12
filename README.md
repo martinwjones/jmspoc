@@ -3,14 +3,13 @@
 An WSO2 Micro Integrator project written in Apache synsapse code.
 This creates an incoming API endpoint with three resources, each posts a message to a corresponding message queue:
 
-* /pay posts to -> OrderPaymentMQ
-* /fail posts to ->  OrderPaymentErrorMQ
-* /retry posts to -> OrderPaymentRetryMQ
+* /pay posts to -> OrderPaymentMQ -> is processed and the payload printed out. It then gets sent to the OrderPaymentErrorMQ
+* /fail posts to ->  OrderPaymentErrorMQ -> has NO processor. Messages should be manually copied to the OrderPaymentRetryMQ
+* /retry posts to -> OrderPaymentRetryMQ -> is processed and the payload printed out - END.
 
-A message from the OrderPaymentErrorMQ to either of the other message queues in ActiveMQ should be processed.
 This proof-of-concept that an error queue (with no message processor) can act as a triage queue.
 
-There are there environment variables:
+There are three environment variables:
 
 | Variable Name | Example |
 | --- | --- |
