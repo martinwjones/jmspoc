@@ -50,4 +50,7 @@
     <artifact name="OrderPaymentRetrySeq" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/sequences/OrderPaymentRetrySeq.xml</file>
     </artifact>
+    <artifact name="OrderPaymentQueueEP" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/OrderPaymentQueueEP.xml</file>
+    </artifact>
 </artifacts>

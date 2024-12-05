@@ -16,10 +16,10 @@
   <properties>
     <com.example.metadata_._OrderPaymentProxy_proxy_metadata>capp/EnterpriseServiceBus</com.example.metadata_._OrderPaymentProxy_proxy_metadata>
     <com.example.endpoint_._OrderPaymentRetryProxyEP>capp/EnterpriseServiceBus</com.example.endpoint_._OrderPaymentRetryProxyEP>
+    <com.example.endpoint_._OrderPaymentQueueEP>capp/EnterpriseServiceBus</com.example.endpoint_._OrderPaymentQueueEP>
     <com.example.proxy-service_._OrderPaymentProxy>capp/EnterpriseServiceBus</com.example.proxy-service_._OrderPaymentProxy>
     <com.example.sequence_._OrderPaymentErrorSeq>capp/EnterpriseServiceBus</com.example.sequence_._OrderPaymentErrorSeq>
     <com.example.sequence_._OrderPaymentRetrySeq>capp/EnterpriseServiceBus</com.example.sequence_._OrderPaymentRetrySeq>
-    
     <com.example.proxy-service_._OrderPaymentRetryProxy>capp/EnterpriseServiceBus</com.example.proxy-service_._OrderPaymentRetryProxy>
     <com.example.api_._OrderPaymentServiceAPI>capp/EnterpriseServiceBus</com.example.api_._OrderPaymentServiceAPI>
     <com.example.message-processors_._OrderPaymentRetryMP>capp/EnterpriseServiceBus</com.example.message-processors_._OrderPaymentRetryMP>
@@ -47,6 +47,12 @@
       <type>xml</type>
     </dependency>
     <dependency>
+      <groupId>com.example.endpoint</groupId>
+      <artifactId>OrderPaymentQueueEP</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
       <groupId>com.example.proxy-service</groupId>
       <artifactId>OrderPaymentProxy</artifactId>
       <version>1.0.0</version>
@@ -64,7 +70,7 @@
       <version>1.0.0</version>
       <type>xml</type>
     </dependency>
-        <dependency>
+    <dependency>
       <groupId>com.example.proxy-service</groupId>
       <artifactId>OrderPaymentRetryProxy</artifactId>
       <version>1.0.0</version>

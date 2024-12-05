@@ -2,5 +2,5 @@
 <messageProcessor class="org.apache.synapse.message.processor.impl.forwarder.ScheduledMessageForwardingProcessor" messageStore="OrderPaymentMQ" name="OrderPaymentMP" targetEndpoint="OrderPaymentProxyEP" xmlns="http://ws.apache.org/ns/synapse">
     <parameter name="message.processor.reply.sequence">OrderPaymentSeq</parameter>
     <parameter name="max.delivery.drop">Disabled</parameter>
-    <parameter name="is.active">true</parameter>
+    <parameter name="is.active">false</parameter>
 </messageProcessor>
